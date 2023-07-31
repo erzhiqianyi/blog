@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <div class="page-header pt">
+      {% block breadcrumbs -%}
+        <div class="">
+          <a class="" href="{{ get_url(path="@/_index.md",lang=lang) }}">{{ trans(key="label_home",lang=lang) }}</a>
+          <span class="divider">&nbsp;&gt;&nbsp;</span>
+          All {{ taxonomy.name }}
+        </div>
+      {% endblock breadcrumbs -%}
+    </div>
+{% endblock header %}
+{% block main %}
+  <div class="taxonomy-list-page">
+    <div class="main-box-block">
+      <ul class="root-ul">
+        {% for category in terms %}
+          <li>
+            <a href="{{ category.permalink }}">{{ category.name }}</a>
+            ({{ category.pages | length }})
+            <ul>
+              {% for page in category.pages %}
+                <li>{{ macro::post_min(page=page) }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock main %}

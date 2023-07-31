@@ -1,16 +1,39 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+bin
+temp*
+deno.lock
+dist/
+public
+prod-db.zip
+.obsidian
+.env
+data/
+webmentions/
+book-dist/
+*-dist/
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode/*.log
+# Icon must end with two \r
+Icon
+wrangler.toml
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+# Thumbnails
+._*
 
-# Book build output
-_book
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

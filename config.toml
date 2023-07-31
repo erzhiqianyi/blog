@@ -1,0 +1,172 @@
+base_url = "https://erzhiqian.cc"
+build_search_index = false
+compile_sass = false
+default_language = "zh"
+description = "好奇心を持ち、変化と挑戦を求める"
+generate_feed = true
+generate_rss = true
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 50 },
+  { name = "categories", feed = true, paginate_by = 50 },
+]
+title = "二の前のBlog"
+
+[markdown]
+# When set to "true", all code blocks are highlighted.  highlight_code = true
+# highlight_theme = "material-dark"
+# Whether external links are to be opened in a new tab
+# If this is true, a `rel="noopener"` will always automatically be added for security reasons
+external_links_target_blank = true
+
+# Whether to set rel="nofollow" for all external links
+external_links_no_follow = true
+
+# Whether to set rel="noreferrer" for all external links
+external_links_no_referrer = true
+smart_punctuation = true
+
+[extra]
+author = "二の前"
+email = "erzhiqianyi@gmail.com"
+prefix_url = "xxx"
+indieweb_url = "xxx"
+theme_color = "#fffcf9"
+meilisearch_url = "xxx"
+meilisearch_api_key = "xxx"
+### indieweb note
+bio = "好奇心を持ち、変化と挑戦を求める"
+
+### THIRD PARTY
+# google_analytics = "UA-012345-67"
+# disqus = "disqus-user"
+
+### SOCIAL MEDIA
+edit_url_prefix = "https://github.com/erzhiqianyi/digital-space/tree/main/content"
+github_user = "erzhiqianyi"
+image = "xxx"
+"label_action_in-reply-to" = "replied"
+"label_action_like-of" = "liked"
+"label_action_mention-of" = "mentioned"
+"label_action_reply-to" = "replied"
+"label_action_repost-of" = "reposted"
+"label_action_rsvp" = "answered"
+twitter_user = "xxx"
+webmention_path = "webmentions"
+### I18N WORDS
+
+[slugify]
+anchors = "on"
+paths = "on"
+taxonomies = "on"
+
+[translations]
+label_toggle_more = "展开全部"
+label_or_toggle_more = "或展开剩余文章"
+keywords = "xxx"
+label_activity = "动态"
+label_all_posts = "点击展开其余文章或进入[下一页](/blog/#index-11)"
+label_all_thoughts = "[すべての短い考えを見る](/thoughts/#continue-reading)"
+label_all_quotes = "[点击查看所有摘录](/quotes/#continue-reading)"
+label_archive = "全部文章归档"
+label_back_to_start = "正文开始"
+label_book_author = "图书作者"
+"label_bookmark-of" = "收藏"
+label_books = "全部书评"
+label_categories = "所有分类"
+label_category = "カテゴリー"
+label_created = "公開日"
+label_edit = "帮我完善这个页面？"
+"label_follow-of" = "关注"
+label_home = "首页"
+label_blog_home = "博客首页"
+"label_in-reply-to" = "回复"
+label_latest_notes_title = "最近更新的[笔记](/categories/notes/)："
+label_latest_articles_title = "最近发布的[文章](/blog/)："
+"label_like-of" = "喜欢"
+label_links = "一些可能有用的链接"
+"label_mention-of" = "提及"
+label_new_posts_list_title = "最近公開された[記事](/blog/)"
+label_by_category_title = "按 [分类](/categories/) 查看"
+label_by_time_title = "按 [归档](/archive/) 查看"
+label_notes_title = "全部[笔记](/categories/notes/)(更新时间排序)"
+label_published_on = "on"
+label_rating = "我的评分"
+label_read_more = "继续阅读需要"
+label_reading = "阅读时间"
+label_full_reading = "全文阅读"
+"label_repost-of" = "转发"
+label_response = "回应区"
+label_reply = "回应"
+label_response_description = "以上的响应由 [webmention.io](https://webmention.io/) 收集."
+label_rss = "订阅RSS"
+"label_rsvp" = "答复"
+label_table_contents = "快速导航"
+label_tag = "タグ"
+label_backlinks = "博客内双向链接文章"
+label_tags = "タグ"
+label_target_language = "English Blog"
+label_taxonomy = "类别"
+label_thoughts_title = "最新の[短い考え](/thoughts/)："
+label_quotes_title = "最新的[摘录](/quotes/)："
+label_updated = "最后更新时间"
+[languages.en]
+build_search_index = false
+generate_feed = true
+description = "A Curious, search for change and challenge"
+taxonomies = [
+  { name = "tags", feed = true, paginate_by = 25 },
+  { name = "categories", feed = true, paginate_by = 25 },
+]
+title = "Erzhiqian's Blog"
+[languages.en.translations]
+keywords = "Focus, Reading, Tool sharing, Plain text, English learning"
+label_activity = "Activity"
+label_all_posts = "Click to expand the more articles or [open next page](/en/blog/#index-11)"
+label_all_thoughts = "[View all thoughts](/en/thoughts/#continue-reading)"
+label_or_toggle_more = "Or, toggle more posts"
+label_archive = "Archive"
+label_toggle_more = "Toggle more"
+label_back_to_start = "Get Started"
+label_book_author = "Book Author"
+label_backlinks = "Internal Linked References"
+"label_bookmark-of" = "Bookmarks"
+label_books = "All books reviews"
+label_categories = "Categories"
+label_category = "Category"
+label_created = "Published"
+label_full_reading = "Reading Time"
+label_edit = "Edit this page"
+"label_follow-of" = "Follows"
+label_home = "Home"
+label_blog_home ="Blog Home"
+"label_in-reply-to" = "Replies"
+label_latest_notes_title = "[Recently Updated Notes](/en/categories/notes/):"
+label_latest_articles_title = "[Recently Updated Posts](/en/blog/):"
+"label_like-of" = "Likes"
+label_links = "Links"
+"label_mention-of" = "Mentions"
+label_new_posts_list_title = "By [Latest](/en/blog/) Articles:"
+label_by_category_title = "By [Category](/categories/)"
+label_by_time_title = "By [Archive](/archive/)"
+label_notes_title = "All Notes [(sort by update time)](/en/categories/notes/):"
+label_published_on = "on"
+label_rating = "Rating"
+label_reply = "Reply"
+label_read_more = "Continue to Read"
+label_reading = "Reading Time"
+"label_repost-of" = "Reposts"
+label_response = "Response"
+label_response_description = "The above responses are collected by the [webmention.io](https://webmention.io/) service."
+label_rss = "Subscribe RSS"
+"label_rsvp" = "RSVP"
+label_table_contents = "On this page"
+label_tag = "Tag"
+label_tags = "Tags"
+label_target_language = "日本語"
+label_taxonomy = "Taxonomy"
+label_thoughts_title = "Latest [Short Thoughts](/en/thoughts/)："
+label_updated = "Updated"
+label_quotes_title = "Latest [Quotes](/en/quotes/)："
+label_all_quotes = "[View all quotes](/en/quotes/#continue-reading)"
+
+
