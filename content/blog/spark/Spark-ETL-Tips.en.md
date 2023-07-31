@@ -1,6 +1,6 @@
 ---
 title: Spark ETL code Tips
-description: Tips for write Spark ETL application 
+description: 
 language: en
 date: 2023-07-31
 updated: 2023-07-31
@@ -10,8 +10,8 @@ taxonomies:
   tags:
     - Writing
 ---
-
 Tips for write Spark ETL application
+
 <!-- more -->
 
 ## Avoid use withColumn in loop

@@ -1,7 +1,7 @@
 ---
 title: SparkのETLコードの最適化に役立つヒント 
-description: Spark ETLアプリケーションを記述するためのヒント
-language: en
+description: 
+language: zh
 date: 2023-07-31
 updated: 2023-07-31
 taxonomies:
@@ -10,7 +10,6 @@ taxonomies:
   tags:
     - Writing
 ---
-
 Spark ETLアプリケーションを記述するためのヒント
 <!-- more -->
 
