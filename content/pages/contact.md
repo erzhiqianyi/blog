@@ -6,6 +6,7 @@ updated: 2023-07-31
 taxonomies:
   categories:
     - Notes
+    - Journal
   tags:
     - About
     - Random Book

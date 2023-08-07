@@ -17,10 +17,7 @@ taxonomies:
 
 ## About Me
 
-
-### Programmer
-
-
+I am 29 years old now , But I can't 
 ### What am I doing now?
 
 See what am I doing now at [Now](/content/pages/now.md)
@@ -30,7 +27,7 @@ See what am I doing now at [Now](/content/pages/now.md)
 - Email: `erzhiqianyi#gamil.com` (Replace `#` with `@`)
 
 
-- Twitter [@TheOwenYoung](https://twitter.com/erzhiqianyi)
+- Twitter [@erzhiqianyi](https://twitter.com/erzhiqianyi)
 
 
 ## Other Resources

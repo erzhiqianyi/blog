@@ -9,6 +9,7 @@ taxonomies:
     - Tweets
 ---
 
+> RIP, Every programmer should learn how to use vim 2023.08.06
 
 > At last, a stone has fallen, but do they care about what we are thinking？You are nobody.  2023.07.25
 
