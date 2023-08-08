@@ -1,6 +1,6 @@
 ---
 title: Now
-path: now/
+path: en/now
 date: 2022-03-25
 updated: 2022-12-29
 taxonomies:
@@ -17,11 +17,13 @@ taxonomies:
 
 <!-- more -->
 
-## 進行中
+## In progress
 
-## 正在读
+### 5 am project 
+A 5am project , get up at 5am ,running 8 kilometers and listen Japanese podcast when running . 
 
+## reading
 
 
 ## Projects
-
+[Japanese study telegram bot on cloudfare](https://github.com/erzhiqianyi/telgram-bot-on-cloudfare)

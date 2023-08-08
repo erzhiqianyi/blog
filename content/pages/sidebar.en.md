@@ -10,7 +10,7 @@ title: Sidebar
 ## About
 
 - [About](/en/about/)
-- [Now](/now/)
+- [Now](/en/now/)
 - [Changelog](/content/changelog/index.en.md)
 
 ## Other
