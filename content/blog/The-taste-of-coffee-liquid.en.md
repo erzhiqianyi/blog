@@ -9,7 +9,7 @@ taxonomies:
   categories:
     - In Progress
   tags:
-    - Writing
+    - Life
 ---
 
 I am not a coffed lover ,but I would like to share some story about coffee and myself. 
