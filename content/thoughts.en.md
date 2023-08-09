@@ -1,13 +1,15 @@
 ---
 title: Tweets
 date: 2023-07-24
-updated: 2023-07-25
+updated: 2023-08-09
 taxonomies:
   categories:
     - In Progress 
   tags:
     - Tweets
 ---
+
+> The third day of the 5am project , a little tired ,want to give up ,sleep is not enough,may need go to bed early 
 
 > FlagShip, フラッグシップ 2023.08.08
  
