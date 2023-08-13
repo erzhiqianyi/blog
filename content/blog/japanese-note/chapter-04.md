@@ -1,10 +1,10 @@
 ---
-title: "chapter-04:　部屋に机と椅子があります" 
+title: "chapter-04:部屋に机と椅子があります" 
 description: 
 draft: false
 language: en
 date: 2023-08-10
-updated: 2023-08-10
+pdated: 2023-08-10
 taxonomies:
   categories:
     - 日本語ノート
