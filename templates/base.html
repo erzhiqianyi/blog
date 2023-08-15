@@ -131,6 +131,8 @@
     <link rel="manifest" href="{{ get_url(path="site/images/manifest.json") }}" >
     {% if config.extra.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics }}"></script>
+
+    <!-- Google tag (gtag.js) -->
       <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -139,6 +141,7 @@
         gtag("js", new Date());
         gtag("config", "{{ config.extra.google_analytics }}");
       </script>
+
     {% endif %}
     {% block post_meta %}{% endblock post_meta %}
   </head>

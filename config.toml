@@ -37,7 +37,7 @@ meilisearch_api_key = "xxx"
 bio = "好奇心を持ち、変化と挑戦を求める"
 
 ### THIRD PARTY
-# google_analytics = "UA-012345-67"
+google_analytics = "G-QG6E0MN5JR"
 # disqus = "disqus-user"
 
 ### SOCIAL MEDIA
