@@ -1,5 +1,5 @@
 ---
-title: "chapter-01: 贈り物屋さんで"
+title: "unit-01: 贈り物屋さんで"
 description: 
 draft: false
 language: en
