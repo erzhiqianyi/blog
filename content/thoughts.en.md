@@ -9,6 +9,7 @@ taxonomies:
     - Tweets
 ---
 
+> The bus today was really fast, and every time it braked, I almost fell over. Thank goodness, I finally got off. 2023.08.17
 
 > The third day of the 5am project , a little tired ,want to give up ,sleep is not enough,may need go to bed early. 2023.08.09
 
