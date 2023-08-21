@@ -16,6 +16,7 @@ taxonomies:
 ---
 
 My first side project , An Chrome plugin ,than can add words to Anki.
+
 <!-- more -->
 
 ## Project Address
@@ -145,12 +146,9 @@ Update the plugin ,then can see the contextmenu
 
 ![](../03-contextmenu.png)
 
-### Adding card to Anki
+### Adding Note to Anki
 See [How to manage Anki By Api](../how-to-manage-anki-by-api) for more information about add note to anki.
 Ask chatgpt to send the word to a specified server
-```
-send a http request 
-```
 Here is the function to send a new card to Anki .
 Need to create a deck and a model first.
 ```javascript
@@ -158,7 +156,6 @@ function sendSelectedWords(words) {
     //default url for anki server
   const url = "http://127.0.0.1:8765"; 
   
-
   add_words = {
     "action": "addNote",
     "version": 6,
@@ -197,3 +194,153 @@ function sendSelectedWords(words) {
 ```
 
 This function creates a basic deck with identical values for the front and back sides.
+
+### Creating Word Assistant Prompt 
+Can ask chatgpt to create a Word Assistant Prompt.
+I already created one . 
+```
+Please provide definitions for the following Japanese words. 
+Definitions should include the word, its kana, romaji, definition, Chinese translation, and part of speech. 
+Additionally, provide 5 example sentences at the N1 level,including kana and Chinese translations. 
+Output the information in JSON format.
+The JSON format like '''{ word: 学生, kana: がくせい, romaji: gakusei, definition: student, chinese: 学生, speech: noun, sentences: [ { sentence: 私は大学生です, kana: わたしはだいがくせいです, chinese: 我是大学生 } ] }'''
+```
+
+Another version is in Japanese 
+
+```
+日本語の単語に対して日本語の定義を提供し、
+その後単語、ひらがな、ローマ字、定義、中国語訳、品詞を出力してください。
+定義はできるだけ詳細に、N1レベルの語彙を参考にしてください。
+定義は日本語で出力してください。
+また、N1レベルの例文5つを提供し、それぞれの例文にひらがなと中国語訳を含めてください。
+出力はJSON形式です。The JSON format like 
+'''{ word: 学生, kana: がくせい, romaji: gakusei, definition: student, chinese: 学生, speech: noun, sentences: [ { sentence: 私は大学生です, kana: わたしはだいがくせいです, chinese: 我是大学生 } ] }'''
+
+```
+See [How To Create Prompt](../../chatgpt/how-to-create-prompt) for more details
+
+### Getting Definition From Openai
+The main feature of this plugin is to explain words and provide example sentences using ChatGPT.
+You can customize the learning material instead of relying on a dictionary.
+
+We can use a cloudflare to proxy openai api ,Because some region can't access to openai api .
+Here is a simple worker to proxy openai api
+
+See [Openai api Proxy](https://github.com/erzhiqianyi/openai-api-proxy) for more details.
+
+Here is function that get Definition from Openai
+
+```javascript
+function explainFromOpenAi(word) {
+    const url = "xxx"
+    const token = "xxx"
+    const wordData = {
+        "model": "gpt-3.5-turbo",
+        "messages": [
+            {
+                "role": "system",
+                "content": "日本語の単語に対して日本語の定義を提供し、 その後単語、ひらがな、ローマ字、定義、中国語訳、品詞を出力してください。 定義はできるだけ詳細に、N1レベルの語彙を参考にしてください。 定義は日本語で出力してください。 また、N1レベルの例文5つを提供し、それぞれの例文にひらがなと中国語訳を含めてください。 出力はJSON形式です。The JSON format like '''{ word: 学生, kana: がくせい, romaji: gakusei, definition: student, chinese: 学生, speech: noun, sentences: [ { sentence: 私は大学生です, kana: わたしはだいがくせいです, chinese: 我是大学生 } ] }'''"
+            },
+            {
+                "role": "user",
+                "content": word
+            }
+        ]
+    }
+    return fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        },
+        body: JSON.stringify(wordData),
+    })
+        .then(response => response.json())
+        .then(data => {
+            return data
+        })
+        .catch(error => {
+            console.error("Error sending request:", error);
+        });
+
+}
+```
+
+### Converting Definition and Sentences to Anki Note
+For the purpose of simplifying the demo, I will use a pre-defined card template.
+
+Here is the simple createModel payload
+```json
+{
+  "action": "createModel",
+  "version": 6,
+  "params": {
+    "modelName": "MyWordNote",
+    "inOrderFields": [
+      "word",
+      "speech",
+      "chinese",
+      "definition",
+      "sentence",
+      "sentence_translation"
+    ],
+    "css": "@font-face {\n font-family: IPAexMincho; src: url('_ipaexm.ttf');\n}\n\n.jp {\n  font-family: IPAexMincho;\n}\n\n.card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}",
+    "isCloze": false,
+    "cardTemplates": [
+      {
+        "Name": "WordDefinition",
+        "Front": "<span class=\"jp\">{{furigana:word}}</span> {{speech}}",
+        "Back": "{{FrontSide}}\n\n<hr id=answer>\n\n<span class=\"jp\">{{furigana:word}}</span> <hr>{{definition}}<hr>{{chinese}}"
+      },
+      {
+        "Name": "Sentence",
+        "Front": "<span class=\"jp\">{{sentence}}</span>",
+        "Back": "{{FrontSide}}\n\n<hr id=answer>\n\n<span class=\"jp\">{{furigana:sentence_translation}}</span> "
+      }
+    ]
+  }
+}
+
+```
+
+And add a new Note
+```json
+{
+  "action": "addNote",
+  "version": 6,
+  "params": {
+    "note": {
+      "deckName": "test_decl",
+      "modelName": "MyWordNote006",
+      "fields": {
+        "word": "学生[がくせい]",
+        "speech": "[名词]",
+        "definition": "A person who is enrolled in school and studying",
+        "chinese": "学生",
+        "sentence": "私は学生です",
+        "sentence_translation": "I am a college student"
+      },
+      "options": {
+        "allowDuplicate": false
+      },
+      "tags": [
+        "tester"
+      ]
+    }
+  }
+}
+```
+The word definition card front
+![Front](../04-definition-card-front.png)
+
+The word definition card back
+![Back](../05-definition-card-back.png)
+
+The sentence card front
+![Front](../06-sentence-card-front.png)
+
+The sentence card back
+![Front](../07-sentence-card-back.png)
+
+
