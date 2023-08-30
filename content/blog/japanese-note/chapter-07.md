@@ -1,5 +1,5 @@
 ---
-title: "chapter-06:李さんは毎日コーヒーを飲みます" 
+title: "chapter-07:李さんは毎日コーヒーを飲みます" 
 description: 
 draft: false
 language: en
@@ -336,7 +336,6 @@ taxonomies:
 
 ```
 
-# 練習する
 ## 名を 动
 ```
 李さん毎日コーヒーを飲みます
@@ -468,7 +467,7 @@ taxonomies:
 この本をください
 ```
 
-###　単語
+##　単語
 ```
 何、なに
 何と何を買いますか
