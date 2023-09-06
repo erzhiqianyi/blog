@@ -7,6 +7,7 @@ taxonomies:
   categories:
     - Notes
     - Journal
+    - Java
   tags:
     - About
     - Random Book
